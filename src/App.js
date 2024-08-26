@@ -131,7 +131,9 @@ const Payment = () => {
 
             <form onSubmit={handleSubmit}>
                 <table>
-                <tbody>
+                    <tr>
+                        <th colspan="2">Please provide the necessary data</th>
+                    </tr>
                     <tr>
                         <td className="label">
                             <label htmlFor ="name">Name</label>
@@ -212,8 +214,6 @@ const Payment = () => {
                             <h4 data-cy="Cart-value">{totalValue}$</h4>
                         </td>
                     </tr>
-
-                </tbody>
                 </table>
                 <button className="button" type="submit">Pay</button>
             </form>
