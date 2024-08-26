@@ -132,7 +132,7 @@ const Payment = () => {
             <form onSubmit={handleSubmit}>
                 <table>
                     <tr>
-                        <th colspan="2">Please provide the necessary data</th>
+                        <th colSpan="2">Please provide the necessary data</th>
                     </tr>
                     <tr>
                         <td className="label">
