@@ -228,7 +228,7 @@ function App() {
             <div className="App">
                 <header className="App-header" data-cy="App-header">
                     <p>
-                        Welcome to my Bike Shop!
+                        Welcome to my Bike Shop! (v0.1)
                     </p>
                 </header>
                 <nav>
