@@ -8,7 +8,7 @@ const Products = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8070/products')
+        axios.get('https://bikeshop-backend.azurewebsites.net/products')
             .then(response => {
             setProducts(response.data);
         })
@@ -18,7 +18,7 @@ const Products = () => {
     }, []);
 
     const addToCart = (product) => {
-        axios.post('http://localhost:8070/addToCart', product);
+        axios.post('https://bikeshop-backend.azurewebsites.net/addToCart', product);
     }
 
     return (
@@ -40,7 +40,7 @@ const Cart = () => {
     const [totalValue, setTotalValue] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8070/cart')
+        axios.get('https://bikeshop-backend.azurewebsites.net/cart')
             .then(response => {
             setCart(response.data);
         })
@@ -50,7 +50,7 @@ const Cart = () => {
     }, []);
 
     useEffect(() => {
-        axios.get('http://localhost:8070/totalCartValue')
+        axios.get('https://bikeshop-backend.azurewebsites.net/totalCartValue')
             .then(response => {
             setTotalValue(response.data);
         })
@@ -60,7 +60,7 @@ const Cart = () => {
     }, []);
 
     const deleteFromCart = (productId) => {
-        axios.delete('http://localhost:8070/deleteFromCart/' + productId)
+        axios.delete('https://bikeshop-backend.azurewebsites.net/deleteFromCart/' + productId)
             .then(response => {
             console.log("Deleted item from cart");
         })
@@ -102,7 +102,7 @@ const Payment = () => {
     })
 
     useEffect(() => {
-        axios.get('http://localhost:8070/totalCartValue')
+        axios.get('https://bikeshop-backend.azurewebsites.net/totalCartValue')
             .then(response => {
             setTotalValue(response.data);
         })
@@ -118,7 +118,7 @@ const Payment = () => {
     const handleSubmit = async (e) => {
         paymentInfo.Sum = totalValue;
         try {
-            const response = await axios.post('http://localhost:8070/makePayment', paymentInfo);
+            const response = await axios.post('https://bikeshop-backend.azurewebsites.net/makePayment', paymentInfo);
             console.log('Payment data submitted successfully:', response.data);
         } catch (error) {
             console.error('Error submitting payment data:', error);
